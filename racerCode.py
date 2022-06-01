@@ -3,6 +3,11 @@ import math
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
+'''
+Intelligence gathering 
+speed of pod - arbitary value derived from the distance from last sample - done
+rate toward target - speed toward next checkpoint
+'''
 
 def debug(m):
     print(m, file=sys.stderr, flush=True)
@@ -31,10 +36,12 @@ class Pod:
         self.y = start_y
         self.speed = 0
 
+
     def update_position(self,new_x, new_y):
         self.update_speed(new_x, new_y)
         self.x = new_x
         self.y = new_y
+
 
     def update_speed(self, new_x, new_y):
         self.speed = calculate_distance(self.x,self.y,new_x,new_y)
@@ -44,7 +51,10 @@ class Pod:
 def set_distance(source_checkpoint, target_checkpoint):
      source_checkpoint.update_distance_to_next(target_checkpoint.x, target_checkpoint.y)
 
-
+def is_add_checkpoint(checkpoints, next_checkpoint_x, next_checkpoint_y):
+    checkpoints_changed = checkpoints[-1].x != next_checkpoint_x or checkpoints[-1].y != next_checkpoint_y
+    checkpoint_matches_known = (sum(c.x == next_checkpoint_x for c in checkpoints ) >0 and sum(c.y == next_checkpoint_y for c in checkpoints) > 0)
+    return checkpoints_changed and not checkpoint_matches_known
 
 checkpoints = []
 pods = []
@@ -68,16 +78,13 @@ while True:
         pods[0].update_position(x,y)
         debug(f"update player pod {x}, {y}, pds speed {pods[0].speed}")
 
-    checkpoints_changed = checkpoints[-1].x != next_checkpoint_x or checkpoints[-1].y != next_checkpoint_y
-    checkpoint_matches_known = (sum(c.x == next_checkpoint_x for c in checkpoints ) >0 and sum(c.y == next_checkpoint_y for c in checkpoints) > 0)
-    add_checkpoint = checkpoints_changed and not checkpoint_matches_known
-    debug(f"checkpoint changed {checkpoints_changed}, matches known {checkpoint_matches_known}")
 
-    if add_checkpoint:
+    if is_add_checkpoint(checkpoints, next_checkpoint_x, next_checkpoint_y):
         active_target = Checkpoint(len(checkpoints)+1, next_checkpoint_x, next_checkpoint_y)
         checkpoints.append(active_target)
         for c in checkpoints:
             debug(c)
+    
     elif len(checkpoints)> 1 and  checkpoints[0].x == next_checkpoint_x and checkpoints[0].y == next_checkpoint_y:
         debug("Map read executing analysis")
         for c_index in range(len(checkpoints)):
