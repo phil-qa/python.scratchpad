@@ -6,7 +6,10 @@ import math
 
 def debug(m):
     print(m, file=sys.stderr, flush=True)
-
+def calculate_distance(reference_x, reference_y, target_x, target_y):
+    x_delta = target_x - reference_x
+    y_delta = target_y - reference_y
+    return int(math.sqrt((x_delta ** 2) + (y_delta ** 2)))
 
 class Checkpoint:
     def __init__(self, position, x, y):
@@ -19,9 +22,24 @@ class Checkpoint:
         return(f"{self.position}, {self.x}, {self.y}, {self.distance_to_next}")
 
     def update_distance_to_next(self, next_x, next_y):
-        x_delta = next_x - self.x
-        y_delta = next_y - self.y
-        self.distance_to_next = int(math.sqrt((x_delta**2) + (y_delta**2)))
+        self.distance_to_next = calculate_distance(self.x,self.y, next_x, next_y)
+
+class Pod:
+    def __init__(self, identity, start_x, start_y):
+        self.identity = identity
+        self.x = start_x
+        self.y = start_y
+        self.speed = 0
+
+    def update_position(self,new_x, new_y):
+        self.update_speed(new_x, new_y)
+        self.x = new_x
+        self.y = new_y
+
+    def update_speed(self, new_x, new_y):
+        self.speed = calculate_distance(self.x,self.y,new_x,new_y)
+
+
 
 def set_distance(source_checkpoint, target_checkpoint):
      source_checkpoint.update_distance_to_next(target_checkpoint.x, target_checkpoint.y)
@@ -29,6 +47,7 @@ def set_distance(source_checkpoint, target_checkpoint):
 
 
 checkpoints = []
+pods = []
 active_target = None
 course_known = False
 boost_fired = False
@@ -43,6 +62,11 @@ while True:
 
     if len(checkpoints) == 0:
         checkpoints.append(Checkpoint(1,next_checkpoint_x, next_checkpoint_y))
+        pods.append(Pod("Player", x, y))
+
+    if pods[0].x != x or pods[0].y != y:
+        pods[0].update_position(x,y)
+        debug(f"update player pod {x}, {y}, pds speed {pods[0].speed}")
 
     checkpoints_changed = checkpoints[-1].x != next_checkpoint_x or checkpoints[-1].y != next_checkpoint_y
     checkpoint_matches_known = (sum(c.x == next_checkpoint_x for c in checkpoints ) >0 and sum(c.y == next_checkpoint_y for c in checkpoints) > 0)
@@ -76,6 +100,7 @@ while True:
                 boost_fired = True
     else:
         thrust = 0 if (next_checkpoint_angle > 90 or next_checkpoint_angle < -90) else 100
+
 
 
 
