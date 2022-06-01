@@ -56,6 +56,9 @@ def is_add_checkpoint(checkpoints, next_checkpoint_x, next_checkpoint_y):
     checkpoint_matches_known = (sum(c.x == next_checkpoint_x for c in checkpoints ) >0 and sum(c.y == next_checkpoint_y for c in checkpoints) > 0)
     return checkpoints_changed and not checkpoint_matches_known
 
+def is_map_conditions_met(checkpoints, next_checkpoint_x, next_checkpoint_y ):
+    return len(checkpoints)> 1 and  checkpoints[0].x == next_checkpoint_x and checkpoints[0].y == next_checkpoint_y
+
 checkpoints = []
 pods = []
 active_target = None
@@ -85,7 +88,7 @@ while True:
         for c in checkpoints:
             debug(c)
     
-    elif len(checkpoints)> 1 and  checkpoints[0].x == next_checkpoint_x and checkpoints[0].y == next_checkpoint_y:
+    elif is_map_conditions_met(checkpoints, next_checkpoint_x, next_checkpoint_y):
         debug("Map read executing analysis")
         for c_index in range(len(checkpoints)):
             set_distance(checkpoints[c_index - 1], checkpoints[c_index])
