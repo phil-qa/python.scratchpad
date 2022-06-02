@@ -30,22 +30,27 @@ class Checkpoint:
         self.distance_to_next = calculate_distance(self.x,self.y, next_x, next_y)
 
 class Pod:
-    def __init__(self, identity, start_x, start_y):
+    def __init__(self, identity, start_x, start_y, distance_to_target):
         self.identity = identity
         self.x = start_x
         self.y = start_y
         self.speed = 0
+        self.target_distance = distance_to_target
+        self.speed_to_target = 0
 
 
-    def update_position(self,new_x, new_y):
+    def update_position(self,new_x, new_y, distance_to_target):
         self.update_speed(new_x, new_y)
+        self.speed_to_target = self.target_distance - distance_to_target
         self.x = new_x
         self.y = new_y
-
+        self.target_distance = distance_to_target
 
     def update_speed(self, new_x, new_y):
         self.speed = calculate_distance(self.x,self.y,new_x,new_y)
 
+    def __str__(self):
+        return(f"pod {self.identity} Speed {self.speed} Speed to target {self.speed_to_target}")
 
 
 def set_distance(source_checkpoint, target_checkpoint):
@@ -75,11 +80,11 @@ while True:
 
     if len(checkpoints) == 0:
         checkpoints.append(Checkpoint(1,next_checkpoint_x, next_checkpoint_y))
-        pods.append(Pod("Player", x, y))
+        pods.append(Pod("Player", x, y, next_checkpoint_dist))
 
     if pods[0].x != x or pods[0].y != y:
-        pods[0].update_position(x,y)
-        debug(f"update player pod {x}, {y}, pds speed {pods[0].speed}")
+        pods[0].update_position(x,y,next_checkpoint_dist)
+        debug(f"{pods[0]}")
 
 
     if is_add_checkpoint(checkpoints, next_checkpoint_x, next_checkpoint_y):
