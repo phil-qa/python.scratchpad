@@ -45,6 +45,7 @@ class Telemetry:
         rec["ship_y"] = y
         rec["angle_to_target"] = angle_to_target
         rec["distance_to_target"] = distance_to_target
+        debug(rec)
         self.readings.append(rec)
 
        
@@ -52,7 +53,7 @@ class Telemetry:
     def __str__(self):
         report = ""
         for x in self.readings:
-            line = f"{x['iteration'], x['']}\n"
+            line = f"{x['iteration']}, {x['target']}\n"
             report += line
         return report
 
@@ -72,9 +73,9 @@ class Pod:
         self.target_id = 1
 
 
-    def update_position(self,new_x, new_y, distance_to_target, angle_to_target):
+    def update_position(self, target_id, new_x, new_y, distance_to_target, angle_to_target):
         self.race_iterator+=1
-        self.tel.add_reading(self.race_iterator, self.target_id, new_x, new_y, angle_to_target, distance_to_target)
+        self.tel.add_reading(self.race_iterator, target_id, new_x, new_y, angle_to_target, distance_to_target)
         self.update_speed(new_x, new_y)
         self.speed_to_target = self.target_distance - distance_to_target
         self.x = new_x
@@ -127,17 +128,18 @@ while True:
         checkpoints.append(Checkpoint(1,next_checkpoint_x, next_checkpoint_y))
         pods.append(Pod("Player", x, y, next_checkpoint_dist))
 
-
-    if pods[0].x != x or pods[0].y != y: #is the pod in a different positon to last time
-        pods[0].update_position(x,y,next_checkpoint_dist, next_checkpoint_angle)
-        debug(f"{pods[0]}")
-
+    active_target = (next((x for x in checkpoints if x.x == next_checkpoint_x and x.y == next_checkpoint_y ), None))
 
     if is_add_checkpoint(checkpoints, next_checkpoint_x, next_checkpoint_y):
         active_target = Checkpoint(len(checkpoints)+1, next_checkpoint_x, next_checkpoint_y)
         checkpoints.append(active_target)
         for c in checkpoints:
             debug(c)
+    
+    
+    if pods[0].x != x or pods[0].y != y: #is the pod in a different positon to last time
+        pods[0].update_position(active_target.position, x,y,next_checkpoint_dist, next_checkpoint_angle)
+        debug(f"{pods[0]}")
     
     elif is_map_conditions_met(checkpoints, next_checkpoint_x, next_checkpoint_y):
         debug("Map read executing analysis")
