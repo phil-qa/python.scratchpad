@@ -23,21 +23,10 @@ def calculate_distance(reference_x, reference_y, target_x, target_y):
 
 def will_pod_hit(distance_to_target, start_speed, angle_to_target):
     # light weight check assumptions, accelleration is constant 25 per tick, max speed is 650, turnRate is 17 degrees per tick
-    ticks_to_target = 1
-    projection_speed = start_speed
-    while distance_to_target > 0:
-        distance_to_target -= projection_speed
-        projection_speed += 25
-        if projection_speed > 650:
-            projection_speed = 650
-        ticks_to_target += 1 
-    angle_turned = ticks_to_target * 17
-    debug(f"Distance to target {distance_to_target}, anticipated turns to arrive {ticks_to_target}, required angle {angle_to_target}, available_angle {angle_turned} ")
-    if angle_turned >= angle_to_target:
-        return True
-    else: 
-        return False
-
+    # v 1.2 - normalize to 360 degrees - done - redact for 1.3
+    # v 1.3 - compensate for speed by reducing the angle available as a factor of percent of max speed - fail cant detect miss in time 
+    # v 1.4 - apply vector angles and try and determine where it will go over the distance 
+    return True
 
 
 class Checkpoint:
@@ -194,7 +183,7 @@ while True:
         debug(f"{lengths}, {lengths.index(max(lengths))+1}" )
 
         thrust = 0 if (next_checkpoint_angle > 90 or next_checkpoint_angle < -90) else 100
-        to_hit_target = will_pod_hit(next_checkpoint_dist, pods[0].speed, next_checkpoint_angle)
+        to_hit_target = will_pod_hit(next_checkpoint_dist, pods[0].speed_to_target, next_checkpoint_angle)
         
         if not boost_fired and active_target.position == lengths.index(max(lengths))+1:
             if next_checkpoint_angle > -10 and next_checkpoint_angle <10:
