@@ -9,7 +9,8 @@ speed of pod - arbitary value derived from the distance from last sample - done
 rate toward target - speed toward next checkpoint - done
 implement telemetry
 improve speed function
-implement will_hit_target
+implement will_hit_target - iteration 1:  will the pod be facing the target by the time it reaches it given that we know distance and ticks and acceleration is about 25 per
+tich and the turn rate is 17 degrees a tick the algorithm would be the distance to the target and the starting speed and angle
 '''
 
 def debug(m):
@@ -19,6 +20,25 @@ def calculate_distance(reference_x, reference_y, target_x, target_y):
     x_delta = target_x - reference_x
     y_delta = target_y - reference_y
     return int(math.sqrt((x_delta ** 2) + (y_delta ** 2)))
+
+def will_pod_hit(distance_to_target, start_speed, angle_to_target):
+    # light weight check assumptions, accelleration is constant 25 per tick, max speed is 650, turnRate is 17 degrees per tick
+    ticks_to_target = 1
+    projection_speed = start_speed
+    while distance_to_target > 0:
+        distance_to_target -= projection_speed
+        projection_speed += 25
+        if projection_speed > 650:
+            projection_speed = 650
+        ticks_to_target += 1 
+    angle_turned = ticks_to_target * 17
+    debug(f"Distance to target {distance_to_target}, anticipated turns to arrive {ticks_to_target}, required angle {angle_to_target}, available_angle {angle_turned} ")
+    if angle_turned >= angle_to_target:
+        return True
+    else: 
+        return False
+
+
 
 class Checkpoint:
     def __init__(self, position, x, y):
@@ -59,6 +79,12 @@ class Telemetry:
 
 
 class Pod:
+    '''
+    Independent analysis shows that the pod max acceleration is over 5 turns then slow but continual, max speed in 24 turns with no influence from non linear momentum
+    the pod turns 17 degrees per tick,  
+
+
+    '''
     def __init__(self, identity, start_x, start_y, distance_to_target):
         self.identity = identity
         self.x = start_x
@@ -104,8 +130,11 @@ def is_add_checkpoint(checkpoints, next_checkpoint_x, next_checkpoint_y):
     return checkpoints_changed and not checkpoint_matches_known
 
 def is_map_conditions_met(checkpoints, next_checkpoint_x, next_checkpoint_y ):
-    return len(checkpoints)> 1 and  checkpoints[0].x == next_checkpoint_x and checkpoints[0].y == next_checkpoint_y
+    next_checkpoint_is_first = len(checkpoints)> 1 and  checkpoints[0].x == next_checkpoint_x and checkpoints[0].y == next_checkpoint_y
+    return next_checkpoint_is_first
 
+
+    
 checkpoints = []
 pods = []
 active_target = None
@@ -136,11 +165,6 @@ while True:
         for c in checkpoints:
             debug(c)
     
-    
-    if pods[0].x != x or pods[0].y != y: #is the pod in a different positon to last time
-        pods[0].update_position(active_target.position, x,y,next_checkpoint_dist, next_checkpoint_angle)
-        debug(f"{pods[0]}")
-    
     elif is_map_conditions_met(checkpoints, next_checkpoint_x, next_checkpoint_y):
         debug("Map read executing analysis")
         for c_index in range(len(checkpoints)):
@@ -148,6 +172,12 @@ while True:
         for c in checkpoints:
             debug(c)
         course_known = True
+    
+    if pods[0].x != x or pods[0].y != y: #is the pod in a different positon to last time
+        pods[0].update_position(active_target.position, x,y,next_checkpoint_dist, next_checkpoint_angle)
+        debug(f"{pods[0]}")
+    
+
 
     
 
@@ -164,6 +194,8 @@ while True:
         debug(f"{lengths}, {lengths.index(max(lengths))+1}" )
 
         thrust = 0 if (next_checkpoint_angle > 90 or next_checkpoint_angle < -90) else 100
+        to_hit_target = will_pod_hit(next_checkpoint_dist, pods[0].speed, next_checkpoint_angle)
+        
         if not boost_fired and active_target.position == lengths.index(max(lengths))+1:
             if next_checkpoint_angle > -10 and next_checkpoint_angle <10:
                 debug("Fire boost")
