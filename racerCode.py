@@ -1,3 +1,4 @@
+from cmath import acos, asin
 import sys
 import math
 
@@ -21,11 +22,24 @@ def calculate_distance(reference_x, reference_y, target_x, target_y):
     y_delta = target_y - reference_y
     return int(math.sqrt((x_delta ** 2) + (y_delta ** 2)))
 
-def will_pod_hit(distance_to_target, start_speed, angle_to_target):
+def calculate_trajectory(primary_x, primary_y, secondary_x, secondary_y, target_x, target_y):
+    reference_line = calculate_distance(primary_x, primary_y, target_x, target_y)
+    travel_line = calculate_distance(primary_x, primary_y, secondary_x, secondary_y)
+    target_line = calculate_distance(secondary_x,secondary_y, target_x, target_y)
+    reference_angle = 57.29*(acos((reference_line**2+travel_line**2-target_line**2)/(2*reference_line * travel_line)))
+    travel_angle = 57.29*(acos((travel_line**2 + target_line **2 - reference_line **2)/ (2 * travel_line * target_line)))
+    target_angle = 57.29*(acos ((target_line ** 2 + reference_line ** 2 - travel_line ** 2)/(2 * target_line * reference_line)))
+    return [reference_angle, travel_line, target_angle, travel_angle]
+
+def will_pod_hit(refrence_x, reference_y, secondary_x, secondary_y, target_x, target_y):
     # light weight check assumptions, accelleration is constant 25 per tick, max speed is 650, turnRate is 17 degrees per tick
     # v 1.2 - normalize to 360 degrees - done - redact for 1.3
     # v 1.3 - compensate for speed by reducing the angle available as a factor of percent of max speed - fail cant detect miss in time 
     # v 1.4 - apply vector angles and try and determine where it will go over the distance 
+
+    vectors = calculate_angle(refrence_x, reference_y, secondary_x, secondary_y, target_x, target_y)
+    debug(vectors)
+
     return True
 
 
@@ -86,15 +100,17 @@ class Pod:
         self.tel = Telemetry()
         self.race_iterator = 0
         self.target_id = 1
+        self.trajectory_angle = 0
 
 
-    def update_position(self, target_id, new_x, new_y, distance_to_target, angle_to_target):
+    def update_position(self, target_id, new_x, new_y, distance_to_target, angle_to_target, target_x, target_y):
         self.race_iterator+=1
         self.tel.add_reading(self.race_iterator, target_id, new_x, new_y, angle_to_target, distance_to_target)
         self.update_speed(new_x, new_y)
         self.speed_to_target = self.target_distance - distance_to_target
-        self.x = new_x
-        self.y = new_y
+        trajectory = calculate_trajectory(self.x,self.y,new_x,new_y,target_x, target_y)
+        debug(trajectory)
+        self.update_pod_position(new_x, new_y)
         self.target_distance = distance_to_target
         
 
@@ -103,8 +119,9 @@ class Pod:
         self.y_momentum = (self.y - new_y)*-1
         self.speed = calculate_distance(self.x,self.y,new_x,new_y)
     
-    
-
+    def update_pod_position(self, new_x, new_y):
+        self.x = new_x
+        self.y = new_y
 
     def __str__(self):
         return(f"pod {self.identity} Speed {self.speed} Speed to target {self.speed_to_target}")
@@ -163,7 +180,7 @@ while True:
         course_known = True
     
     if pods[0].x != x or pods[0].y != y: #is the pod in a different positon to last time
-        pods[0].update_position(active_target.position, x,y,next_checkpoint_dist, next_checkpoint_angle)
+        pods[0].update_position(active_target.position, x,y,next_checkpoint_dist, next_checkpoint_angle,next_checkpoint_x, next_checkpoint_y )
         debug(f"{pods[0]}")
     
 
@@ -171,6 +188,7 @@ while True:
     
 
     if(course_known):
+        player = pods[0]
         last_target = active_target
         active_target = (next((x for x in checkpoints if x.x == next_checkpoint_x and x.y == next_checkpoint_y ), None))
         if active_target.position != last_target.position and active_target.position == 1:
@@ -183,7 +201,7 @@ while True:
         debug(f"{lengths}, {lengths.index(max(lengths))+1}" )
 
         thrust = 0 if (next_checkpoint_angle > 90 or next_checkpoint_angle < -90) else 100
-        to_hit_target = will_pod_hit(next_checkpoint_dist, pods[0].speed_to_target, next_checkpoint_angle)
+
         
         if not boost_fired and active_target.position == lengths.index(max(lengths))+1:
             if next_checkpoint_angle > -10 and next_checkpoint_angle <10:
