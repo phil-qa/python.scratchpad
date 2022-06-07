@@ -26,9 +26,9 @@ def calculate_trajectory(primary_x, primary_y, secondary_x, secondary_y, target_
     reference_line = calculate_distance(primary_x, primary_y, target_x, target_y)
     travel_line = calculate_distance(primary_x, primary_y, secondary_x, secondary_y)
     target_line = calculate_distance(secondary_x,secondary_y, target_x, target_y)
-    reference_angle = 57.29*(acos((reference_line**2+travel_line**2-target_line**2)/(2*reference_line * travel_line)))
-    travel_angle = 57.29*(acos((travel_line**2 + target_line **2 - reference_line **2)/ (2 * travel_line * target_line)))
-    target_angle = 57.29*(acos ((target_line ** 2 + reference_line ** 2 - travel_line ** 2)/(2 * target_line * reference_line)))
+    reference_angle = int(57.29*((acos((reference_line**2+travel_line**2-target_line**2)/(2*reference_line * travel_line)).real)))
+    travel_angle = int(57.29*(acos((travel_line**2 + target_line **2 - reference_line **2)/ (2 * travel_line * target_line)).real))
+    target_angle =int( 57.29*(acos ((target_line ** 2 + reference_line ** 2 - travel_line ** 2)/(2 * target_line * reference_line)).real))
     return [reference_angle, travel_line, target_angle, travel_angle]
 
 def will_pod_hit(refrence_x, reference_y, secondary_x, secondary_y, target_x, target_y):
@@ -71,15 +71,51 @@ class Telemetry:
         debug(rec)
         self.readings.append(rec)
 
-       
 
-    def __str__(self):
-        report = ""
-        for x in self.readings:
-            line = f"{x['iteration']}, {x['target']}\n"
-            report += line
-        return report
 
+class Course:
+    def __init__(self):
+        self.checkpoints = []
+        self.course_known = False
+        self.active_target_checkpoint = None
+        self.last_active_checkpoint = None
+        self.course_known = False
+    
+    def add_checkpoint(self, id, x, y):
+         checkpoints.append(Checkpoint(id,x,y))
+
+    def update_active_target(self, target_x, target_y):
+        self.update_course_state(target_x, target_y)
+        self.active_target_checkpoint = (next((cp for cp in checkpoints if cp.x == target_x and cp.y == target_y ), None))
+    
+    def is_add_checkpoint(self, next_checkpoint_x, next_checkpoint_y):
+        checkpoints_changed = self.checkpoints[-1].x != next_checkpoint_x or checkpoints[-1].y != next_checkpoint_y
+        checkpoint_matches_known = (sum(c.x == next_checkpoint_x for c in checkpoints ) >0 and sum(c.y == next_checkpoint_y for c in checkpoints) > 0)
+        return checkpoints_changed and not checkpoint_matches_known
+
+    def is_map_conditions_met(self, next_checkpoint_x, next_checkpoint_y ):
+        next_checkpoint_is_first = len(self.checkpoints)> 1 and  self.checkpoints[0].x == next_checkpoint_x and self.checkpoints[0].y == next_checkpoint_y
+        return next_checkpoint_is_first
+    
+    def update_course_state(self, next_checkpoint_x, next_checkpoint_y):
+        if self.is_add_checkpoint(next_checkpoint_x, next_checkpoint_y):
+            active_target = Checkpoint(len(self.checkpoints)+1, next_checkpoint_x, next_checkpoint_y)
+            checkpoints.append(active_target)
+            for c in self.checkpoints:
+                debug(c)
+    
+        elif self.is_map_conditions_met(next_checkpoint_x, next_checkpoint_y):
+            debug("Map read executing analysis")
+            for c_index in range(len(self.checkpoints)):
+                set_distance(self.checkpoints[c_index - 1], self.checkpoints[c_index])
+            for c in self.checkpoints:
+                debug(c)
+            self.course_known = True
+
+
+    
+    
+        
 
 class Pod:
     '''
@@ -110,6 +146,7 @@ class Pod:
         self.speed_to_target = self.target_distance - distance_to_target
         trajectory = calculate_trajectory(self.x,self.y,new_x,new_y,target_x, target_y)
         debug(trajectory)
+        self.trajectory_angle = trajectory[0]
         self.update_pod_position(new_x, new_y)
         self.target_distance = distance_to_target
         
@@ -130,57 +167,45 @@ class Pod:
 def set_distance(source_checkpoint, target_checkpoint):
      source_checkpoint.update_distance_to_next(target_checkpoint.x, target_checkpoint.y)
 
-def is_add_checkpoint(checkpoints, next_checkpoint_x, next_checkpoint_y):
-    checkpoints_changed = checkpoints[-1].x != next_checkpoint_x or checkpoints[-1].y != next_checkpoint_y
-    checkpoint_matches_known = (sum(c.x == next_checkpoint_x for c in checkpoints ) >0 and sum(c.y == next_checkpoint_y for c in checkpoints) > 0)
-    return checkpoints_changed and not checkpoint_matches_known
-
-def is_map_conditions_met(checkpoints, next_checkpoint_x, next_checkpoint_y ):
-    next_checkpoint_is_first = len(checkpoints)> 1 and  checkpoints[0].x == next_checkpoint_x and checkpoints[0].y == next_checkpoint_y
-    return next_checkpoint_is_first
 
 
+class Optimisation:
+    def __init__(self):
+        self.window = 80
     
-checkpoints = []
+
+'''Operational race code'''
+
+
 pods = []
 active_target = None
 course_known = False
 boost_fired = False
 lap = 1
 lapped = False
+opt = Optimisation()
+course = Course()
+checkpoints = course.checkpoints
+
 # game loop
 while True:
     # next_checkpoint_x: x position of the next check point
     # next_checkpoint_y: y position of the next check point
     # next_checkpoint_dist: distance to the next checkpoint
     # next_checkpoint_angle: angle between your pod orientation and the direction of the next checkpoint
+
     x, y, next_checkpoint_x, next_checkpoint_y, next_checkpoint_dist, next_checkpoint_angle = [int(i) for i in input().split()]
     opponent_x, opponent_y = [int(i) for i in input().split()]
 
-    
-
     if len(checkpoints) == 0: #no checkpoints add one
-        checkpoints.append(Checkpoint(1,next_checkpoint_x, next_checkpoint_y))
+        course.add_checkpoint(1,next_checkpoint_x, next_checkpoint_y)
         pods.append(Pod("Player", x, y, next_checkpoint_dist))
-
-    active_target = (next((x for x in checkpoints if x.x == next_checkpoint_x and x.y == next_checkpoint_y ), None))
-
-    if is_add_checkpoint(checkpoints, next_checkpoint_x, next_checkpoint_y):
-        active_target = Checkpoint(len(checkpoints)+1, next_checkpoint_x, next_checkpoint_y)
-        checkpoints.append(active_target)
-        for c in checkpoints:
-            debug(c)
     
-    elif is_map_conditions_met(checkpoints, next_checkpoint_x, next_checkpoint_y):
-        debug("Map read executing analysis")
-        for c_index in range(len(checkpoints)):
-            set_distance(checkpoints[c_index - 1], checkpoints[c_index])
-        for c in checkpoints:
-            debug(c)
-        course_known = True
+    player = pods[0]
+    course.update_active_target(next_checkpoint_x, next_checkpoint_y)
     
     if pods[0].x != x or pods[0].y != y: #is the pod in a different positon to last time
-        pods[0].update_position(active_target.position, x,y,next_checkpoint_dist, next_checkpoint_angle,next_checkpoint_x, next_checkpoint_y )
+        pods[0].update_position(course.active_target_checkpoint.position, x,y,next_checkpoint_dist, next_checkpoint_angle,next_checkpoint_x, next_checkpoint_y )
         debug(f"{pods[0]}")
     
 
@@ -200,11 +225,13 @@ while True:
         lengths.insert(0, lengths.pop())
         debug(f"{lengths}, {lengths.index(max(lengths))+1}" )
 
-        thrust = 0 if (next_checkpoint_angle > 90 or next_checkpoint_angle < -90) else 100
+        thrust = 0 if player.trajectory_angle > opt.window else 100
 
+        longest_leg = next(x for x in checkpoints if x.distance_to_next == max(lengths))
+        debug(longest_leg.position)
         
         if not boost_fired and active_target.position == lengths.index(max(lengths))+1:
-            if next_checkpoint_angle > -10 and next_checkpoint_angle <10:
+            if player.trajectory_angle <= 10:
                 debug("Fire boost")
                 thrust = "BOOST"
                 boost_fired = True
@@ -212,7 +239,7 @@ while True:
         thrust = 0 if (next_checkpoint_angle > 90 or next_checkpoint_angle < -90) else 100
 
 
-
+    debug(f"thrust {thrust}, boost fired {boost_fired}")
 
 
 
