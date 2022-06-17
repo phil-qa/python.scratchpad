@@ -4,6 +4,7 @@ import math
 
 # Auto-generated code below aims at helping you parse
 # the standard input according to the problem statement.
+# add additional 
 '''
 Intelligence gathering 
 speed of pod - arbitary value derived from the distance from last sample - done
@@ -12,6 +13,9 @@ implement telemetry
 improve speed function
 implement will_hit_target - iteration 1:  will the pod be facing the target by the time it reaches it given that we know distance and ticks and acceleration is about 25 per
 tich and the turn rate is 17 degrees a tick the algorithm would be the distance to the target and the starting speed and angle
+add additional telemetry to determine turn rate is it constant - NO
+add code to decelerate and accelerate - Done
+Implement trajectorey angle as simple response
 '''
 
 def debug(m):
@@ -37,6 +41,7 @@ def will_pod_hit(refrence_x, reference_y, secondary_x, secondary_y, target_x, ta
     # v 1.3 - compensate for speed by reducing the angle available as a factor of percent of max speed - fail cant detect miss in time 
     # v 1.4 - apply vector angles and try and determine where it will go over the distance 
 
+
     vectors = calculate_angle(refrence_x, reference_y, secondary_x, secondary_y, target_x, target_y)
     debug(vectors)
 
@@ -60,14 +65,19 @@ class Telemetry:
     def __init__(self):
      self.readings = []
     
-    def add_reading(self,iteration, target_id,  x, y, angle_to_target, distance_to_target):
+    def add_reading(self,iteration, target_id,  x, y, angle_to_target, distance_to_target, speed, trajectory_angle, speed_toTarget, will_hit):
         rec = {}
         rec["iteration"] = iteration
         rec["target"] = target_id
         rec["ship_x"] = x
         rec["ship_y"] = y
-        rec["angle_to_target"] = angle_to_target
+        rec["angle_to_target"] = angle_to_target if angle_to_target >=0 else angle_to_target * -1 
         rec["distance_to_target"] = distance_to_target
+        rec["trajectory_angle"] = trajectory_angle
+        rec["speed_to_target"] = speed_toTarget
+        rec["ship_speed"] = speed
+        rec["will_hit_target"] = will_hit
+
         debug(rec)
         self.readings.append(rec)
 
@@ -79,7 +89,6 @@ class Course:
         self.course_known = False
         self.active_target_checkpoint = None
         self.last_active_checkpoint = None
-        self.course_known = False
     
     def add_checkpoint(self, id, x, y):
          checkpoints.append(Checkpoint(id,x,y))
@@ -137,11 +146,13 @@ class Pod:
         self.race_iterator = 0
         self.target_id = 1
         self.trajectory_angle = 0
+        self.thrust = 100
+        self.hit_next_target = True
+        self.fire_boost = False
 
 
     def update_position(self, target_id, new_x, new_y, distance_to_target, angle_to_target, target_x, target_y):
         self.race_iterator+=1
-        self.tel.add_reading(self.race_iterator, target_id, new_x, new_y, angle_to_target, distance_to_target)
         self.update_speed(new_x, new_y)
         self.speed_to_target = self.target_distance - distance_to_target
         trajectory = calculate_trajectory(self.x,self.y,new_x,new_y,target_x, target_y)
@@ -149,6 +160,8 @@ class Pod:
         self.trajectory_angle = trajectory[0]
         self.update_pod_position(new_x, new_y)
         self.target_distance = distance_to_target
+        self.will_I_hit_target()
+        self.tel.add_reading(self.race_iterator,self.hit_next_target, target_id, new_x, new_y, angle_to_target, distance_to_target, self.speed, self.trajectory_angle, self.speed_to_target)
         
 
     def update_speed(self, new_x, new_y):
@@ -159,9 +172,24 @@ class Pod:
     def update_pod_position(self, new_x, new_y):
         self.x = new_x
         self.y = new_y
+    
+    def accellerate(self, rate): 
+        if (self.thrust+ rate) >100:
+            self.thrust = 100
+        else:
+            self.thrust += rate
+    
+    def decellerate(self, rate):
+        if (self.thrust - rate )<17:
+            self.thrust = 17
+        else:
+            self.thrust -= rate
+    
+    def will_I_hit_target(self):
+        self.hit_next_target = True if self.trajectory_angle in range(0,30)  else False 
 
     def __str__(self):
-        return(f"pod {self.identity} Speed {self.speed} Speed to target {self.speed_to_target}")
+        return(f"pod {self.identity} Speed {self.speed} Speed to target {self.speed_to_target}, trajectory angle to target {self.trajectory_angle}")
 
 
 def set_distance(source_checkpoint, target_checkpoint):
@@ -212,11 +240,13 @@ while True:
 
     
 
-    if(course_known):
+    if(course.course_known):
         player = pods[0]
-        last_target = active_target
-        active_target = (next((x for x in checkpoints if x.x == next_checkpoint_x and x.y == next_checkpoint_y ), None))
-        if active_target.position != last_target.position and active_target.position == 1:
+        course.last_active_checkpoint = course.active_target_checkpoint
+        
+        course.update_active_target(next_checkpoint_x,next_checkpoint_y )
+
+        if course.active_target_checkpoint != course.last_active_checkpoint and course.active_target_checkpoint == course.checkpoints[1] :
             lap +=1 
             debug(f"Lap changed, lap {lap}")
             if lap == 2:
@@ -225,21 +255,25 @@ while True:
         lengths.insert(0, lengths.pop())
         debug(f"{lengths}, {lengths.index(max(lengths))+1}" )
 
-        thrust = 0 if player.trajectory_angle > opt.window else 100
+        player.decellerate(40) if not player.hit_next_target else player.accellerate(50)
 
         longest_leg = next(x for x in checkpoints if x.distance_to_next == max(lengths))
         debug(longest_leg.position)
         
-        if not boost_fired and active_target.position == lengths.index(max(lengths))+1:
-            if player.trajectory_angle <= 10:
+        if not boost_fired and course.active_target_checkpoint.position == lengths.index(max(lengths))+1:
+            if player.trajectory_angle <= 30:
                 debug("Fire boost")
-                thrust = "BOOST"
+                player.fire_boost = True
                 boost_fired = True
     else:
-        thrust = 0 if (next_checkpoint_angle > 90 or next_checkpoint_angle < -90) else 100
+        if player.trajectory_angle > 40:
+            player.decellerate(5)
+        else:
+            player.accellerate(30)
 
 
-    debug(f"thrust {thrust}, boost fired {boost_fired}")
+
+    debug(f"thrust {player.thrust}, boost fired {boost_fired}")
 
 
 
@@ -255,6 +289,9 @@ while True:
     # i.e.: "x y thrust"
 
 
+    thrust_value = player.thrust
+    if player.fire_boost:
+        thrust_value = "BOOST"
 
 
-    print(str(next_checkpoint_x) + " " + str(next_checkpoint_y) + f" {thrust}")
+    print(str(next_checkpoint_x) + " " + str(next_checkpoint_y) + f" {thrust_value}")
