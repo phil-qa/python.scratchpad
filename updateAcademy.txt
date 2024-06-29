@@ -1,0 +1,16 @@
+import os
+import subprocess
+
+folder_path = r"./Academny"
+git_repo_url = "https://github.com/phil-qa/Academy"
+
+if os.path.exists(folder_path):
+    if os.path.exists(os.path.join(folder_path, ".git")):
+        print("Git repository exists. Performing git pull.")
+        subprocess.run(["git", "-C", folder_path, "pull"])
+    else:
+        print("Folder exists but is not a Git repository. Performing git clone.")
+        subprocess.run(["git", "clone", git_repo_url, folder_path])
+else:
+    print("Folder does not exist. Cloning")
+    subprocess.run(["git", "clone", git_repo_url, folder_path])
