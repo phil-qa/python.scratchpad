@@ -1,0 +1,278 @@
+{'iteration': 1, 'target': 1, 'ship_x': 10362, 'ship_y': 6430, 'angle_to_target': 0, 'distance_to_target': 6903}
+{'iteration': 2, 'target': 1, 'ship_x': 10181, 'ship_y': 6397, 'angle_to_target': 0, 'distance_to_target': 6719}
+{'iteration': 3, 'target': 1, 'ship_x': 9929, 'ship_y': 6351, 'angle_to_target': 0, 'distance_to_target': 6463}
+{'iteration': 4, 'target': 1, 'ship_x': 9617, 'ship_y': 6294, 'angle_to_target': 0, 'distance_to_target': 6145}
+{'iteration': 5, 'target': 1, 'ship_x': 9254, 'ship_y': 6228, 'angle_to_target': 0, 'distance_to_target': 5776}
+{'iteration': 6, 'target': 1, 'ship_x': 8848, 'ship_y': 6154, 'angle_to_target': 0, 'distance_to_target': 5364}
+{'iteration': 7, 'target': 1, 'ship_x': 8405, 'ship_y': 6072, 'angle_to_target': 0, 'distance_to_target': 4913}
+{'iteration': 8, 'target': 1, 'ship_x': 7931, 'ship_y': 5984, 'angle_to_target': 0, 'distance_to_target': 4431}
+{'iteration': 9, 'target': 1, 'ship_x': 7430, 'ship_y': 5891, 'angle_to_target': 0, 'distance_to_target': 3922}
+{'iteration': 10, 'target': 1, 'ship_x': 6906, 'ship_y': 5794, 'angle_to_target': 0, 'distance_to_target': 3389}
+{'iteration': 11, 'target': 1, 'ship_x': 6363, 'ship_y': 5693, 'angle_to_target': 0, 'distance_to_target': 2836}
+{'iteration': 12, 'target': 1, 'ship_x': 5804, 'ship_y': 5589, 'angle_to_target': 0, 'distance_to_target': 2268}
+{'iteration': 13, 'target': 1, 'ship_x': 5231, 'ship_y': 5482, 'angle_to_target': 0, 'distance_to_target': 1685}
+{'iteration': 14, 'target': 1, 'ship_x': 4646, 'ship_y': 5373, 'angle_to_target': 0, 'distance_to_target': 1090}
+{'iteration': 15, 'target': 2, 'ship_x': 4051, 'ship_y': 5262, 'angle_to_target': -177, 'distance_to_target': 9793}
+{'iteration': 16, 'target': 2, 'ship_x': 3546, 'ship_y': 5168, 'angle_to_target': -159, 'distance_to_target': 10306}
+{'iteration': 17, 'target': 2, 'ship_x': 3117, 'ship_y': 5089, 'angle_to_target': -141, 'distance_to_target': 10742}
+{'iteration': 18, 'target': 2, 'ship_x': 2753, 'ship_y': 5022, 'angle_to_target': -123, 'distance_to_target': 11111}
+{'iteration': 19, 'target': 2, 'ship_x': 2444, 'ship_y': 4966, 'angle_to_target': -105, 'distance_to_target': 11425}
+{'iteration': 20, 'target': 2, 'ship_x': 2182, 'ship_y': 4919, 'angle_to_target': -87, 'distance_to_target': 11691}
+{'iteration': 21, 'target': 2, 'ship_x': 1972, 'ship_y': 4979, 'angle_to_target': -70, 'distance_to_target': 11882}
+{'iteration': 22, 'target': 2, 'ship_x': 1836, 'ship_y': 5121, 'angle_to_target': -53, 'distance_to_target': 11984}
+{'iteration': 23, 'target': 2, 'ship_x': 1789, 'ship_y': 5314, 'angle_to_target': -36, 'distance_to_target': 11992}
+{'iteration': 24, 'target': 2, 'ship_x': 1836, 'ship_y': 5527, 'angle_to_target': -19, 'distance_to_target': 11906}
+{'iteration': 25, 'target': 2, 'ship_x': 1974, 'ship_y': 5726, 'angle_to_target': -1, 'distance_to_target': 11737}
+{'iteration': 26, 'target': 2, 'ship_x': 2190, 'ship_y': 5911, 'angle_to_target': 0, 'distance_to_target': 11495}
+{'iteration': 27, 'target': 2, 'ship_x': 2472, 'ship_y': 6083, 'angle_to_target': 0, 'distance_to_target': 11192}
+{'iteration': 28, 'target': 2, 'ship_x': 2810, 'ship_y': 6243, 'angle_to_target': 0, 'distance_to_target': 10835}
+{'iteration': 29, 'target': 2, 'ship_x': 3196, 'ship_y': 6391, 'angle_to_target': 0, 'distance_to_target': 10434}
+{'iteration': 30, 'target': 2, 'ship_x': 3623, 'ship_y': 6528, 'angle_to_target': 0, 'distance_to_target': 9995}
+{'iteration': 31, 'target': 2, 'ship_x': 4085, 'ship_y': 6655, 'angle_to_target': 0, 'distance_to_target': 9522}
+{'iteration': 32, 'target': 2, 'ship_x': 4577, 'ship_y': 6772, 'angle_to_target': 0, 'distance_to_target': 9021}
+{'iteration': 33, 'target': 2, 'ship_x': 5095, 'ship_y': 6880, 'angle_to_target': 0, 'distance_to_target': 8495}
+{'iteration': 34, 'target': 2, 'ship_x': 5634, 'ship_y': 6981, 'angle_to_target': 0, 'distance_to_target': 7950}
+{'iteration': 35, 'target': 2, 'ship_x': 6191, 'ship_y': 7074, 'angle_to_target': 0, 'distance_to_target': 7387}
+{'iteration': 36, 'target': 2, 'ship_x': 6764, 'ship_y': 7159, 'angle_to_target': 0, 'distance_to_target': 6810}
+{'iteration': 37, 'target': 2, 'ship_x': 7350, 'ship_y': 7238, 'angle_to_target': 0, 'distance_to_target': 6220}
+{'iteration': 38, 'target': 2, 'ship_x': 7947, 'ship_y': 7310, 'angle_to_target': 0, 'distance_to_target': 5620}
+{'iteration': 39, 'target': 2, 'ship_x': 8554, 'ship_y': 7376, 'angle_to_target': 0, 'distance_to_target': 5010}
+{'iteration': 40, 'target': 2, 'ship_x': 9169, 'ship_y': 7437, 'angle_to_target': 0, 'distance_to_target': 4393}
+{'iteration': 41, 'target': 2, 'ship_x': 9791, 'ship_y': 7492, 'angle_to_target': 0, 'distance_to_target': 3770}
+{'iteration': 42, 'target': 2, 'ship_x': 10419, 'ship_y': 7541, 'angle_to_target': 0, 'distance_to_target': 3141}
+{'iteration': 43, 'target': 2, 'ship_x': 11052, 'ship_y': 7584, 'angle_to_target': 0, 'distance_to_target': 2507}
+{'iteration': 44, 'target': 2, 'ship_x': 11690, 'ship_y': 7621, 'angle_to_target': 0, 'distance_to_target': 1869}
+{'iteration': 45, 'target': 2, 'ship_x': 12332, 'ship_y': 7651, 'angle_to_target': -1, 'distance_to_target': 1228}
+{'iteration': 46, 'target': 3, 'ship_x': 12977, 'ship_y': 7673, 'angle_to_target': -92, 'distance_to_target': 6371}
+{'iteration': 47, 'target': 3, 'ship_x': 13525, 'ship_y': 7691, 'angle_to_target': -79, 'distance_to_target': 6457}
+{'iteration': 48, 'target': 3, 'ship_x': 14069, 'ship_y': 7644, 'angle_to_target': -66, 'distance_to_target': 6523}
+{'iteration': 49, 'target': 3, 'ship_x': 14587, 'ship_y': 7522, 'angle_to_target': -53, 'distance_to_target': 6555}
+{'iteration': 50, 'target': 3, 'ship_x': 15055, 'ship_y': 7323, 'angle_to_target': -39, 'distance_to_target': 6538}
+{'iteration': 51, 'target': 3, 'ship_x': 15449, 'ship_y': 7054, 'angle_to_target': -25, 'distance_to_target': 6465}
+{'iteration': 52, 'target': 3, 'ship_x': 15749, 'ship_y': 6732, 'angle_to_target': -11, 'distance_to_target': 6332}
+{'iteration': 53, 'target': 3, 'ship_x': 15951, 'ship_y': 6374, 'angle_to_target': -3, 'distance_to_target': 6142}
+{'iteration': 54, 'target': 3, 'ship_x': 16065, 'ship_y': 5988, 'angle_to_target': -3, 'distance_to_target': 5897}
+{'iteration': 55, 'target': 3, 'ship_x': 16100, 'ship_y': 5581, 'angle_to_target': -2, 'distance_to_target': 5604}
+{'iteration': 56, 'target': 3, 'ship_x': 16064, 'ship_y': 5159, 'angle_to_target': -2, 'distance_to_target': 5265}
+{'iteration': 57, 'target': 3, 'ship_x': 15965, 'ship_y': 4728, 'angle_to_target': -2, 'distance_to_target': 4889}
+{'iteration': 58, 'target': 3, 'ship_x': 15810, 'ship_y': 4292, 'angle_to_target': -2, 'distance_to_target': 4479}
+{'iteration': 59, 'target': 3, 'ship_x': 15604, 'ship_y': 3856, 'angle_to_target': -2, 'distance_to_target': 4040}
+{'iteration': 60, 'target': 3, 'ship_x': 15352, 'ship_y': 3423, 'angle_to_target': -2, 'distance_to_target': 3576}
+{'iteration': 61, 'target': 3, 'ship_x': 15057, 'ship_y': 2997, 'angle_to_target': -3, 'distance_to_target': 3092}
+{'iteration': 62, 'target': 3, 'ship_x': 14723, 'ship_y': 2582, 'angle_to_target': -3, 'distance_to_target': 2592}
+ {'iteration': 63, 'target': 3, 'ship_x': 14353, 'ship_y': 2181, 'angle_to_target': -4, 'distance_to_target': 2081}
+ {'iteration': 64, 'target': 3, 'ship_x': 13948, 'ship_y': 1800, 'angle_to_target': -6, 'distance_to_target': 1565}
+ {'iteration': 65, 'target': 3, 'ship_x': 13509, 'ship_y': 1446, 'angle_to_target': -11, 'distance_to_target': 1059}
+ {'iteration': 66, 'target': 3, 'ship_x': 13037, 'ship_y': 1133, 'angle_to_target': -24, 'distance_to_target': 610}
+ {'iteration': 67, 'target': 4, 'ship_x': 12538, 'ship_y': 888, 'angle_to_target': -56, 'distance_to_target': 5451}
+ {'iteration': 68, 'target': 4, 'ship_x': 12027, 'ship_y': 729, 'angle_to_target': -44, 'distance_to_target': 5436}
+ {'iteration': 69, 'target': 4, 'ship_x': 11525, 'ship_y': 668, 'angle_to_target': -31, 'distance_to_target': 5378}
+ {'iteration': 70, 'target': 4, 'ship_x': 11057, 'ship_y': 707, 'angle_to_target': -18, 'distance_to_target': 5272}
+ {'iteration': 71, 'target': 4, 'ship_x': 10648, 'ship_y': 839, 'angle_to_target': -5, 'distance_to_target': 5114}
+ {'iteration': 72, 'target': 4, 'ship_x': 10298, 'ship_y': 1051, 'angle_to_target': -4, 'distance_to_target': 4905}
+ {'iteration': 73, 'target': 4, 'ship_x': 10005, 'ship_y': 1331, 'angle_to_target': -3, 'distance_to_target': 4648}
+ {'iteration': 74, 'target': 4, 'ship_x': 9768, 'ship_y': 1667, 'angle_to_target': -3, 'distance_to_target': 4349}
+ {'iteration': 75, 'target': 4, 'ship_x': 9584, 'ship_y': 2051, 'angle_to_target': -3, 'distance_to_target': 4010}
+ {'iteration': 76, 'target': 4, 'ship_x': 9451, 'ship_y': 2473, 'angle_to_target': -3, 'distance_to_target': 3638}
+ {'iteration': 77, 'target': 4, 'ship_x': 9368, 'ship_y': 2927, 'angle_to_target': -3, 'distance_to_target': 3235}
+ {'iteration': 78, 'target': 4, 'ship_x': 9334, 'ship_y': 3405, 'angle_to_target': -4, 'distance_to_target': 2807}
+ {'iteration': 79, 'target': 4, 'ship_x': 9347, 'ship_y': 3902, 'angle_to_target': -4, 'distance_to_target': 2360}
+ {'iteration': 80, 'target': 4, 'ship_x': 9408, 'ship_y': 4411, 'angle_to_target': -6, 'distance_to_target': 1898}
+ {'iteration': 81, 'target': 4, 'ship_x': 9517, 'ship_y': 4924, 'angle_to_target': -8, 'distance_to_target': 1433}
+ {'iteration': 82, 'target': 4, 'ship_x': 9680, 'ship_y': 5432, 'angle_to_target': -13, 'distance_to_target': 985}
+ {'iteration': 83, 'target': 4, 'ship_x': 9903, 'ship_y': 5916, 'angle_to_target': -28, 'distance_to_target': 615}
+ {'iteration': 84, 'target': 1, 'ship_x': 10189, 'ship_y': 6351, 'angle_to_target': 176, 'distance_to_target': 6718}
+ {'iteration': 85, 'target': 1, 'ship_x': 10432, 'ship_y': 6720, 'angle_to_target': 161, 'distance_to_target': 7030}
+ {'iteration': 86, 'target': 1, 'ship_x': 10638, 'ship_y': 7033, 'angle_to_target': 145, 'distance_to_target': 7305}
+ {'iteration': 87, 'target': 1, 'ship_x': 10813, 'ship_y': 7299, 'angle_to_target': 128, 'distance_to_target': 7545}
+ {'iteration': 88, 'target': 1, 'ship_x': 10961, 'ship_y': 7525, 'angle_to_target': 111, 'distance_to_target': 7753}
+ {'iteration': 89, 'target': 1, 'ship_x': 11086, 'ship_y': 7717, 'angle_to_target': 94, 'distance_to_target': 7932}
+ {'iteration': 90, 'target': 1, 'ship_x': 11192, 'ship_y': 7880, 'angle_to_target': 77, 'distance_to_target': 8086}
+ {'iteration': 91, 'target': 1, 'ship_x': 11206, 'ship_y': 8083, 'angle_to_target': 61, 'distance_to_target': 8169}
+ {'iteration': 92, 'target': 1, 'ship_x': 11124, 'ship_y': 8293, 'angle_to_target': 44, 'distance_to_target': 8171}
+ {'iteration': 93, 'target': 1, 'ship_x': 10955, 'ship_y': 8478, 'angle_to_target': 28, 'distance_to_target': 8089}
+ {'iteration': 94, 'target': 1, 'ship_x': 10715, 'ship_y': 8611, 'angle_to_target': 11, 'distance_to_target': 7928}
+ {'iteration': 95, 'target': 1, 'ship_x': 10421, 'ship_y': 8680, 'angle_to_target': 1, 'distance_to_target': 7696}
+ {'iteration': 96, 'target': 1, 'ship_x': 10083, 'ship_y': 8693, 'angle_to_target': 1, 'distance_to_target': 7403}
+ {'iteration': 97, 'target': 1, 'ship_x': 9708, 'ship_y': 8656, 'angle_to_target': 1, 'distance_to_target': 7057}
+ {'iteration': 98, 'target': 1, 'ship_x': 9303, 'ship_y': 8575, 'angle_to_target': 1, 'distance_to_target': 6667}
+ {'iteration': 99, 'target': 1, 'ship_x': 8873, 'ship_y': 8456, 'angle_to_target': 1, 'distance_to_target': 6237}
+ {'iteration': 100, 'target': 1, 'ship_x': 8423, 'ship_y': 8302, 'angle_to_target': 1, 'distance_to_target': 5775}
+ {'iteration': 101, 'target': 1, 'ship_x': 7957, 'ship_y': 8118, 'angle_to_target': 1, 'distance_to_target': 5285}
+ {'iteration': 102, 'target': 1, 'ship_x': 7478, 'ship_y': 7906, 'angle_to_target': 1, 'distance_to_target': 4770}
+ {'iteration': 103, 'target': 1, 'ship_x': 6989, 'ship_y': 7668, 'angle_to_target': 1, 'distance_to_target': 4234}
+ {'iteration': 104, 'target': 1, 'ship_x': 6493, 'ship_y': 7408, 'angle_to_target': 1, 'distance_to_target': 3681}
+ {'iteration': 105, 'target': 1, 'ship_x': 5993, 'ship_y': 7126, 'angle_to_target': 1, 'distance_to_target': 3114}
+ {'iteration': 106, 'target': 1, 'ship_x': 5490, 'ship_y': 6824, 'angle_to_target': 1, 'distance_to_target': 2535}
+ {'iteration': 107, 'target': 1, 'ship_x': 4988, 'ship_y': 6502, 'angle_to_target': 2, 'distance_to_target': 1947}
+ {'iteration': 108, 'target': 1, 'ship_x': 4489, 'ship_y': 6160, 'angle_to_target': 4, 'distance_to_target': 1353}
+ {'iteration': 109, 'target': 1, 'ship_x': 3998, 'ship_y': 5796, 'angle_to_target': 8, 'distance_to_target': 762}
+ {'iteration': 110, 'target': 2, 'ship_x': 3526, 'ship_y': 5404, 'angle_to_target': 135, 'distance_to_target': 10272}
+ {'iteration': 111, 'target': 2, 'ship_x': 3125, 'ship_y': 5071, 'angle_to_target': 119, 'distance_to_target': 10738}
+ {'iteration': 112, 'target': 2, 'ship_x': 2785, 'ship_y': 4788, 'angle_to_target': 102, 'distance_to_target': 11137}
+ {'iteration': 113, 'target': 2, 'ship_x': 2496, 'ship_y': 4548, 'angle_to_target': 85, 'distance_to_target': 11479}
+ {'iteration': 114, 'target': 2, 'ship_x': 2313, 'ship_y': 4266, 'angle_to_target': 68, 'distance_to_target': 11732}
+ {'iteration': 115, 'target': 2, 'ship_x': 2241, 'ship_y': 3972, 'angle_to_target': 51, 'distance_to_target': 11888}
+ {'iteration': 116, 'target': 2, 'ship_x': 2277, 'ship_y': 3695, 'angle_to_target': 34, 'distance_to_target': 11942}
+ {'iteration': 117, 'target': 2, 'ship_x': 2407, 'ship_y': 3464, 'angle_to_target': 17, 'distance_to_target': 11897}
+ {'iteration': 118, 'target': 2, 'ship_x': 2611, 'ship_y': 3303, 'angle_to_target': 1, 'distance_to_target': 11764}
+ {'iteration': 119, 'target': 2, 'ship_x': 2877, 'ship_y': 3204, 'angle_to_target': 0, 'distance_to_target': 11555}
+ {'iteration': 120, 'target': 2, 'ship_x': 3195, 'ship_y': 3158, 'angle_to_target': 0, 'distance_to_target': 11279}
+ {'iteration': 121, 'target': 2, 'ship_x': 3557, 'ship_y': 3159, 'angle_to_target': 0, 'distance_to_target': 10947}
+ {'iteration': 122, 'target': 2, 'ship_x': 3955, 'ship_y': 3201, 'angle_to_target': 0, 'distance_to_target': 10567}
+ {'iteration': 123, 'target': 2, 'ship_x': 4384, 'ship_y': 3278, 'angle_to_target': 0, 'distance_to_target': 10146}
+ {'iteration': 124, 'target': 2, 'ship_x': 4838, 'ship_y': 3386, 'angle_to_target': 0, 'distance_to_target': 9690}
+ {'iteration': 125, 'target': 2, 'ship_x': 5314, 'ship_y': 3521, 'angle_to_target': 0, 'distance_to_target': 9203}
+ {'iteration': 126, 'target': 2, 'ship_x': 5808, 'ship_y': 3679, 'angle_to_target': 0, 'distance_to_target': 8690}
+ {'iteration': 127, 'target': 2, 'ship_x': 6316, 'ship_y': 3858, 'angle_to_target': 0, 'distance_to_target': 8157}
+ {'iteration': 128, 'target': 2, 'ship_x': 6836, 'ship_y': 4056, 'angle_to_target': 0, 'distance_to_target': 7604}
+ {'iteration': 129, 'target': 2, 'ship_x': 7365, 'ship_y': 4271, 'angle_to_target': 0, 'distance_to_target': 7036}
+ {'iteration': 130, 'target': 2, 'ship_x': 7903, 'ship_y': 4500, 'angle_to_target': 0, 'distance_to_target': 6454}
+ {'iteration': 131, 'target': 2, 'ship_x': 8448, 'ship_y': 4743, 'angle_to_target': 0, 'distance_to_target': 5860}
+ {'iteration': 132, 'target': 2, 'ship_x': 8997, 'ship_y': 4998, 'angle_to_target': 0, 'distance_to_target': 5256}
+ {'iteration': 133, 'target': 2, 'ship_x': 9550, 'ship_y': 5264, 'angle_to_target': 0, 'distance_to_target': 4644}
+ {'iteration': 134, 'target': 2, 'ship_x': 10105, 'ship_y': 5539, 'angle_to_target': 0, 'distance_to_target': 4027}
+ {'iteration': 135, 'target': 2, 'ship_x': 10663, 'ship_y': 5824, 'angle_to_target': 0, 'distance_to_target': 3402}
+ {'iteration': 136, 'target': 2, 'ship_x': 11222, 'ship_y': 6118, 'angle_to_target': 0, 'distance_to_target': 2772}
+ {'iteration': 137, 'target': 2, 'ship_x': 11781, 'ship_y': 6422, 'angle_to_target': 1, 'distance_to_target': 2138}
+ {'iteration': 138, 'target': 2, 'ship_x': 12339, 'ship_y': 6736, 'angle_to_target': 1, 'distance_to_target': 1500}
+ {'iteration': 139, 'target': 2, 'ship_x': 12894, 'ship_y': 7060, 'angle_to_target': 3, 'distance_to_target': 862}
+ {'iteration': 140, 'target': 3, 'ship_x': 13443, 'ship_y': 7399, 'angle_to_target': -138, 'distance_to_target': 6155}
+ {'iteration': 141, 'target': 3, 'ship_x': 13909, 'ship_y': 7686, 'angle_to_target': -124, 'distance_to_target': 6527}
+ {'iteration': 142, 'target': 3, 'ship_x': 14305, 'ship_y': 7929, 'angle_to_target': -109, 'distance_to_target': 6860}
+ {'iteration': 143, 'target': 3, 'ship_x': 14641, 'ship_y': 8135, 'angle_to_target': -93, 'distance_to_target': 7154}
+ {'iteration': 144, 'target': 3, 'ship_x': 14926, 'ship_y': 8310, 'angle_to_target': -77, 'distance_to_target': 7410}
+ {'iteration': 145, 'target': 3, 'ship_x': 15232, 'ship_y': 8381, 'angle_to_target': -61, 'distance_to_target': 7584}
+ {'iteration': 146, 'target': 3, 'ship_x': 15528, 'ship_y': 8348, 'angle_to_target': -45, 'distance_to_target': 7667}
+ {'iteration': 147, 'target': 3, 'ship_x': 15785, 'ship_y': 8220, 'angle_to_target': -29, 'distance_to_target': 7658}
+ {'iteration': 148, 'target': 3, 'ship_x': 15978, 'ship_y': 8015, 'angle_to_target': -13, 'distance_to_target': 7562}
+ {'iteration': 149, 'target': 3, 'ship_x': 16095, 'ship_y': 7753, 'angle_to_target': -1, 'distance_to_target': 7388}
+ {'iteration': 150, 'target': 3, 'ship_x': 16145, 'ship_y': 7443, 'angle_to_target': -1, 'distance_to_target': 7145}
+ {'iteration': 151, 'target': 3, 'ship_x': 16135, 'ship_y': 7094, 'angle_to_target': -1, 'distance_to_target': 6843}
+ {'iteration': 152, 'target': 3, 'ship_x': 16073, 'ship_y': 6714, 'angle_to_target': -1, 'distance_to_target': 6491}
+ {'iteration': 153, 'target': 3, 'ship_x': 15965, 'ship_y': 6308, 'angle_to_target': -1, 'distance_to_target': 6096}
+ {'iteration': 154, 'target': 3, 'ship_x': 15816, 'ship_y': 5881, 'angle_to_target': -1, 'distance_to_target': 5662}
+ {'iteration': 155, 'target': 3, 'ship_x': 15631, 'ship_y': 5438, 'angle_to_target': -1, 'distance_to_target': 5197}
+ {'iteration': 156, 'target': 3, 'ship_x': 15413, 'ship_y': 4983, 'angle_to_target': -1, 'distance_to_target': 4705}
+ {'iteration': 157, 'target': 3, 'ship_x': 15165, 'ship_y': 4519, 'angle_to_target': -1, 'distance_to_target': 4189}
+ {'iteration': 158, 'target': 3, 'ship_x': 14890, 'ship_y': 4049, 'angle_to_target': -1, 'distance_to_target': 3654}
+ {'iteration': 159, 'target': 3, 'ship_x': 14590, 'ship_y': 3575, 'angle_to_target': -1, 'distance_to_target': 3102}
+ {'iteration': 160, 'target': 3, 'ship_x': 14267, 'ship_y': 3100, 'angle_to_target': -2, 'distance_to_target': 2536}
+ {'iteration': 161, 'target': 3, 'ship_x': 13922, 'ship_y': 2627, 'angle_to_target': -2, 'distance_to_target': 1961}
+ {'iteration': 162, 'target': 3, 'ship_x': 13554, 'ship_y': 2159, 'angle_to_target': -4, 'distance_to_target': 1379}
+ {'iteration': 163, 'target': 3, 'ship_x': 13162, 'ship_y': 1700, 'angle_to_target': -9, 'distance_to_target': 799}
+ {'iteration': 164, 'target': 4, 'ship_x': 12742, 'ship_y': 1264, 'angle_to_target': -92, 'distance_to_target': 5188}
+ {'iteration': 165, 'target': 4, 'ship_x': 12385, 'ship_y': 894, 'angle_to_target': -79, 'distance_to_target': 5391}
+ {'iteration': 166, 'target': 4, 'ship_x': 11983, 'ship_y': 594, 'angle_to_target': -66, 'distance_to_target': 5554}
+ {'iteration': 167, 'target': 4, 'ship_x': 11552, 'ship_y': 383, 'angle_to_target': -53, 'distance_to_target': 5663}
+ {'iteration': 168, 'target': 4, 'ship_x': 11114, 'ship_y': 273, 'angle_to_target': -40, 'distance_to_target': 5709}
+ {'iteration': 169, 'target': 4, 'ship_x': 10695, 'ship_y': 268, 'angle_to_target': -26, 'distance_to_target': 5686}
+ {'iteration': 170, 'target': 4, 'ship_x': 10321, 'ship_y': 362, 'angle_to_target': -12, 'distance_to_target': 5592}
+ {'iteration': 171, 'target': 4, 'ship_x': 10008, 'ship_y': 542, 'angle_to_target': -3, 'distance_to_target': 5433}
+ {'iteration': 172, 'target': 4, 'ship_x': 9751, 'ship_y': 794, 'angle_to_target': -3, 'distance_to_target': 5214}
+ {'iteration': 173, 'target': 4, 'ship_x': 9548, 'ship_y': 1106, 'angle_to_target': -2, 'distance_to_target': 4941}
+ {'iteration': 174, 'target': 4, 'ship_x': 9396, 'ship_y': 1469, 'angle_to_target': -2, 'distance_to_target': 4620}
+ {'iteration': 175, 'target': 4, 'ship_x': 9291, 'ship_y': 1874, 'angle_to_target': -2, 'distance_to_target': 4257}
+ {'iteration': 176, 'target': 4, 'ship_x': 9231, 'ship_y': 2314, 'angle_to_target': -2, 'distance_to_target': 3858}
+ {'iteration': 177, 'target': 4, 'ship_x': 9213, 'ship_y': 2781, 'angle_to_target': -2, 'distance_to_target': 3428}
+ {'iteration': 178, 'target': 4, 'ship_x': 9236, 'ship_y': 3270, 'angle_to_target': -3, 'distance_to_target': 2971}
+ {'iteration': 179, 'target': 4, 'ship_x': 9298, 'ship_y': 3776, 'angle_to_target': -3, 'distance_to_target': 2493}
+ {'iteration': 180, 'target': 4, 'ship_x': 9399, 'ship_y': 4293, 'angle_to_target': -4, 'distance_to_target': 2000}
+ {'iteration': 181, 'target': 4, 'ship_x': 9540, 'ship_y': 4815, 'angle_to_target': -6, 'distance_to_target': 1498}
+ {'iteration': 182, 'target': 4, 'ship_x': 9724, 'ship_y': 5334, 'angle_to_target': -11, 'distance_to_target': 1005}
+ {'iteration': 183, 'target': 1, 'ship_x': 9959, 'ship_y': 5835, 'angle_to_target': 148, 'distance_to_target': 6417}
+ {'iteration': 184, 'target': 1, 'ship_x': 10158, 'ship_y': 6261, 'angle_to_target': 133, 'distance_to_target': 6672}
+ {'iteration': 185, 'target': 1, 'ship_x': 10327, 'ship_y': 6623, 'angle_to_target': 118, 'distance_to_target': 6907}
+ {'iteration': 186, 'target': 1, 'ship_x': 10470, 'ship_y': 6930, 'angle_to_target': 102, 'distance_to_target': 7116}
+ {'iteration': 187, 'target': 1, 'ship_x': 10591, 'ship_y': 7190, 'angle_to_target': 86, 'distance_to_target': 7302}
+ {'iteration': 188, 'target': 1, 'ship_x': 10632, 'ship_y': 7490, 'angle_to_target': 70, 'distance_to_target': 7429}
+ {'iteration': 189, 'target': 1, 'ship_x': 10583, 'ship_y': 7800, 'angle_to_target': 54, 'distance_to_target': 7487}
+ {'iteration': 190, 'target': 1, 'ship_x': 10446, 'ship_y': 8091, 'angle_to_target': 39, 'distance_to_target': 7468}
+ {'iteration': 191, 'target': 1, 'ship_x': 10231, 'ship_y': 8270, 'angle_to_target': 23, 'distance_to_target': 7344}
+ {'iteration': 192, 'target': 1, 'ship_x': 9955, 'ship_y': 8265, 'angle_to_target': 6, 'distance_to_target': 7093}
+ {'iteration': 193, 'target': 1, 'ship_x': 9631, 'ship_y': 8217, 'angle_to_target': 0, 'distance_to_target': 6782}
+ {'iteration': 194, 'target': 1, 'ship_x': 9267, 'ship_y': 8132, 'angle_to_target': 0, 'distance_to_target': 6419}
+ {'iteration': 195, 'target': 1, 'ship_x': 8869, 'ship_y': 8014, 'angle_to_target': 0, 'distance_to_target': 6012}
+ {'iteration': 196, 'target': 1, 'ship_x': 8444, 'ship_y': 7867, 'angle_to_target': 0, 'distance_to_target': 5569}
+ {'iteration': 197, 'target': 1, 'ship_x': 7996, 'ship_y': 7693, 'angle_to_target': 0, 'distance_to_target': 5093}
+ {'iteration': 198, 'target': 1, 'ship_x': 7528, 'ship_y': 7496, 'angle_to_target': 0, 'distance_to_target': 4589}
+ {'iteration': 199, 'target': 1, 'ship_x': 7045, 'ship_y': 7278, 'angle_to_target': 0, 'distance_to_target': 4063}
+ {'iteration': 200, 'target': 1, 'ship_x': 6550, 'ship_y': 7041, 'angle_to_target': 0, 'distance_to_target': 3518}
+ {'iteration': 201, 'target': 1, 'ship_x': 6044, 'ship_y': 6787, 'angle_to_target': 1, 'distance_to_target': 2955}
+ {'iteration': 202, 'target': 1, 'ship_x': 5532, 'ship_y': 6516, 'angle_to_target': 1, 'distance_to_target': 2379}
+ {'iteration': 203, 'target': 1, 'ship_x': 5015, 'ship_y': 6229, 'angle_to_target': 1, 'distance_to_target': 1791}
+ {'iteration': 204, 'target': 1, 'ship_x': 4496, 'ship_y': 5926, 'angle_to_target': 3, 'distance_to_target': 1196}
+ {'iteration': 205, 'target': 2, 'ship_x': 3978, 'ship_y': 5605, 'angle_to_target': 152, 'distance_to_target': 9788}
+ {'iteration': 206, 'target': 2, 'ship_x': 3538, 'ship_y': 5333, 'angle_to_target': 135, 'distance_to_target': 10276}
+ {'iteration': 207, 'target': 2, 'ship_x': 3154, 'ship_y': 5086, 'angle_to_target': 117, 'distance_to_target': 10707}
+ {'iteration': 208, 'target': 2, 'ship_x': 2740, 'ship_y': 4732, 'angle_to_target': 101, 'distance_to_target': 11195}
+ {'iteration': 209, 'target': 2, 'ship_x': 2389, 'ship_y': 4432, 'angle_to_target': 84, 'distance_to_target': 11613}
+ {'iteration': 210, 'target': 2, 'ship_x': 2155, 'ship_y': 4100, 'angle_to_target': 67, 'distance_to_target': 11932}
+ {'iteration': 211, 'target': 2, 'ship_x': 2042, 'ship_y': 3765, 'angle_to_target': 50, 'distance_to_target': 12142}
+ {'iteration': 212, 'target': 2, 'ship_x': 2043, 'ship_y': 3455, 'angle_to_target': 34, 'distance_to_target': 12242}
+ {'iteration': 213, 'target': 2, 'ship_x': 2143, 'ship_y': 3199, 'angle_to_target': 17, 'distance_to_target': 12238}
+ {'iteration': 214, 'target': 2, 'ship_x': 2320, 'ship_y': 3018, 'angle_to_target': 1, 'distance_to_target': 12141}
+ {'iteration': 215, 'target': 2, 'ship_x': 2563, 'ship_y': 2903, 'angle_to_target': 0, 'distance_to_target': 11961}
+ {'iteration': 216, 'target': 2, 'ship_x': 2861, 'ship_y': 2845, 'angle_to_target': 0, 'distance_to_target': 11711}
+ {'iteration': 217, 'target': 2, 'ship_x': 3205, 'ship_y': 2837, 'angle_to_target': 0, 'distance_to_target': 11401}
+ {'iteration': 218, 'target': 2, 'ship_x': 3588, 'ship_y': 2872, 'angle_to_target': 0, 'distance_to_target': 11039}
+ {'iteration': 219, 'target': 2, 'ship_x': 4003, 'ship_y': 2944, 'angle_to_target': 0, 'distance_to_target': 10634}
+ {'iteration': 220, 'target': 2, 'ship_x': 4446, 'ship_y': 3049, 'angle_to_target': 0, 'distance_to_target': 10190}
+ {'iteration': 221, 'target': 2, 'ship_x': 4911, 'ship_y': 3183, 'angle_to_target': 0, 'distance_to_target': 9715}
+ {'iteration': 222, 'target': 2, 'ship_x': 5395, 'ship_y': 3342, 'angle_to_target': 0, 'distance_to_target': 9212}
+ {'iteration': 223, 'target': 2, 'ship_x': 5895, 'ship_y': 3522, 'angle_to_target': 0, 'distance_to_target': 8686}
+ {'iteration': 224, 'target': 2, 'ship_x': 6407, 'ship_y': 3722, 'angle_to_target': 0, 'distance_to_target': 8140}
+ {'iteration': 225, 'target': 2, 'ship_x': 6930, 'ship_y': 3940, 'angle_to_target': 0, 'distance_to_target': 7577}
+ {'iteration': 226, 'target': 2, 'ship_x': 7461, 'ship_y': 4173, 'angle_to_target': 0, 'distance_to_target': 6999}
+ {'iteration': 227, 'target': 2, 'ship_x': 7999, 'ship_y': 4420, 'angle_to_target': 0, 'distance_to_target': 6410}
+ {'iteration': 228, 'target': 2, 'ship_x': 8543, 'ship_y': 4680, 'angle_to_target': 0, 'distance_to_target': 5809}
+ {'iteration': 229, 'target': 2, 'ship_x': 9091, 'ship_y': 4950, 'angle_to_target': 0, 'distance_to_target': 5199}
+ {'iteration': 230, 'target': 2, 'ship_x': 9643, 'ship_y': 5230, 'angle_to_target': 0, 'distance_to_target': 4582}
+ {'iteration': 231, 'target': 2, 'ship_x': 10197, 'ship_y': 5520, 'angle_to_target': 0, 'distance_to_target': 3958}
+ {'iteration': 232, 'target': 2, 'ship_x': 10753, 'ship_y': 5819, 'angle_to_target': 0, 'distance_to_target': 3328}
+ {'iteration': 233, 'target': 2, 'ship_x': 11309, 'ship_y': 6126, 'angle_to_target': 0, 'distance_to_target': 2695}
+ {'iteration': 234, 'target': 2, 'ship_x': 11864, 'ship_y': 6441, 'angle_to_target': 1, 'distance_to_target': 2058}
+ {'iteration': 235, 'target': 2, 'ship_x': 12418, 'ship_y': 6765, 'angle_to_target': 1, 'distance_to_target': 1419}
+ {'iteration': 236, 'target': 2, 'ship_x': 12969, 'ship_y': 7099, 'angle_to_target': 4, 'distance_to_target': 780}
+ {'iteration': 237, 'target': 3, 'ship_x': 13513, 'ship_y': 7448, 'angle_to_target': -140, 'distance_to_target': 6215}
+ {'iteration': 238, 'target': 3, 'ship_x': 13975, 'ship_y': 7744, 'angle_to_target': -126, 'distance_to_target': 6598}
+ {'iteration': 239, 'target': 3, 'ship_x': 14367, 'ship_y': 7995, 'angle_to_target': -110, 'distance_to_target': 6940}
+ {'iteration': 240, 'target': 3, 'ship_x': 14700, 'ship_y': 8208, 'angle_to_target': -94, 'distance_to_target': 7241}
+ {'iteration': 241, 'target': 3, 'ship_x': 14983, 'ship_y': 8389, 'angle_to_target': -78, 'distance_to_target': 7504}
+ {'iteration': 242, 'target': 3, 'ship_x': 15288, 'ship_y': 8466, 'angle_to_target': -62, 'distance_to_target': 7684}
+ {'iteration': 243, 'target': 3, 'ship_x': 15586, 'ship_y': 8439, 'angle_to_target': -46, 'distance_to_target': 7774}
+ {'iteration': 244, 'target': 3, 'ship_x': 15731, 'ship_y': 8337, 'angle_to_target': -29, 'distance_to_target': 7740}
+ {'iteration': 245, 'target': 3, 'ship_x': 15795, 'ship_y': 8160, 'angle_to_target': -12, 'distance_to_target': 7608}
+ {'iteration': 246, 'target': 3, 'ship_x': 15805, 'ship_y': 7920, 'angle_to_target': 0, 'distance_to_target': 7398}
+ {'iteration': 247, 'target': 3, 'ship_x': 15768, 'ship_y': 7628, 'angle_to_target': 0, 'distance_to_target': 7121}
+ {'iteration': 248, 'target': 3, 'ship_x': 15691, 'ship_y': 7291, 'angle_to_target': 0, 'distance_to_target': 6788}
+ {'iteration': 249, 'target': 3, 'ship_x': 15578, 'ship_y': 6917, 'angle_to_target': 0, 'distance_to_target': 6406}
+ {'iteration': 250, 'target': 3, 'ship_x': 15434, 'ship_y': 6513, 'angle_to_target': 0, 'distance_to_target': 5983}
+ {'iteration': 251, 'target': 3, 'ship_x': 15262, 'ship_y': 6083, 'angle_to_target': 0, 'distance_to_target': 5525}
+ {'iteration': 252, 'target': 3, 'ship_x': 15066, 'ship_y': 5632, 'angle_to_target': 0, 'distance_to_target': 5037}
+ {'iteration': 253, 'target': 3, 'ship_x': 14848, 'ship_y': 5163, 'angle_to_target': 0, 'distance_to_target': 4524}
+ {'iteration': 254, 'target': 3, 'ship_x': 14610, 'ship_y': 4680, 'angle_to_target': 0, 'distance_to_target': 3988}
+ {'iteration': 255, 'target': 3, 'ship_x': 14354, 'ship_y': 4186, 'angle_to_target': 0, 'distance_to_target': 3434}
+ {'iteration': 256, 'target': 3, 'ship_x': 14082, 'ship_y': 3683, 'angle_to_target': -1, 'distance_to_target': 2865}
+ {'iteration': 257, 'target': 3, 'ship_x': 13794, 'ship_y': 3174, 'angle_to_target': -1, 'distance_to_target': 2283}
+ {'iteration': 258, 'target': 3, 'ship_x': 13491, 'ship_y': 2661, 'angle_to_target': -1, 'distance_to_target': 1691}
+ {'iteration': 259, 'target': 3, 'ship_x': 13173, 'ship_y': 2146, 'angle_to_target': -3, 'distance_to_target': 1091}
+ {'iteration': 260, 'target': 4, 'ship_x': 12698, 'ship_y': 1631, 'angle_to_target': -112, 'distance_to_target': 4839}
+ {'iteration': 261, 'target': 4, 'ship_x': 12263, 'ship_y': 1193, 'angle_to_target': -100, 'distance_to_target': 5068}
+ {'iteration': 262, 'target': 4, 'ship_x': 11894, 'ship_y': 821, 'angle_to_target': -87, 'distance_to_target': 5312}
+ {'iteration': 263, 'target': 4, 'ship_x': 11481, 'ship_y': 514, 'angle_to_target': -74, 'distance_to_target': 5522}
+ {'iteration': 264, 'target': 4, 'ship_x': 11039, 'ship_y': 292, 'angle_to_target': -61, 'distance_to_target': 5683}
+ {'iteration': 265, 'target': 4, 'ship_x': 10589, 'ship_y': 170, 'angle_to_target': -48, 'distance_to_target': 5781}
+ {'iteration': 266, 'target': 4, 'ship_x': 10156, 'ship_y': 152, 'angle_to_target': -34, 'distance_to_target': 5810}
+ {'iteration': 267, 'target': 4, 'ship_x': 9766, 'ship_y': 234, 'angle_to_target': -20, 'distance_to_target': 5766}
+ {'iteration': 268, 'target': 4, 'ship_x': 9444, 'ship_y': 404, 'angle_to_target': -5, 'distance_to_target': 5650}
+ {'iteration': 269, 'target': 4, 'ship_x': 9190, 'ship_y': 646, 'angle_to_target': -3, 'distance_to_target': 5468}
+ {'iteration': 270, 'target': 4, 'ship_x': 8999, 'ship_y': 948, 'angle_to_target': -2, 'distance_to_target': 5228}
+ {'iteration': 271, 'target': 4, 'ship_x': 8866, 'ship_y': 1300, 'angle_to_target': -2, 'distance_to_target': 4935}
+ {'iteration': 272, 'target': 4, 'ship_x': 8786, 'ship_y': 1692, 'angle_to_target': -2, 'distance_to_target': 4597}
+ {'iteration': 273, 'target': 4, 'ship_x': 8757, 'ship_y': 2118, 'angle_to_target': -2, 'distance_to_target': 4218}
+ {'iteration': 274, 'target': 4, 'ship_x': 8775, 'ship_y': 2570, 'angle_to_target': -2, 'distance_to_target': 3803}
+ {'iteration': 275, 'target': 4, 'ship_x': 8836, 'ship_y': 3043, 'angle_to_target': -2, 'distance_to_target': 3359}
+ {'iteration': 276, 'target': 4, 'ship_x': 8937, 'ship_y': 3531, 'angle_to_target': -3, 'distance_to_target': 2890}
+ {'iteration': 277, 'target': 4, 'ship_x': 9077, 'ship_y': 4029, 'angle_to_target': -3, 'distance_to_target': 2402}
+ {'iteration': 278, 'target': 4, 'ship_x': 9255, 'ship_y': 4532, 'angle_to_target': -4, 'distance_to_target': 1899}
